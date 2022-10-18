@@ -29,8 +29,8 @@ const Board = (props) => {
     <>
     <div className="background-panel">
         <div className="snake-ladder-grid">
-        {squareValues.map((squareValue) => (
-            <Square squareNumber={squareValue} playerPositions={{playerOnePosition,playerTwoPosition}} />
+        {squareValues.map((squareValue,key) => (
+            <Square key={squareValue} squareNumber={squareValue} playerPositions={{playerOnePosition,playerTwoPosition}} />
         ))}
         </div>
     </div>

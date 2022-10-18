@@ -14,11 +14,11 @@ const Square = (props) => {
       <div className="snake-ladder-square">
         <div className="square-number">{props.squareNumber}</div>
         {props.squareNumber === 100 && (
-          <img className="home-img" src={HomeImg} alt="Home-image" />
+          <img className="home-img" src={HomeImg} alt="Home-img" />
         )}
         {snakePositions[props.squareNumber] && (
           <>
-            <img className="snake-img" src={SnakeImg} alt="Snake-image" />
+            <img className="snake-img" src={SnakeImg} alt="Snake-img" />
             <div className="snake-positions">
               {props.squareNumber + "-" + snakePositions[props.squareNumber]}{" "}
             </div>
@@ -26,7 +26,7 @@ const Square = (props) => {
         )}
         {ladderPositions[props.squareNumber] && (
           <>
-            <img className="ladder-img" src={LadderImg} alt="Ladder-image" />
+            <img className="ladder-img" src={LadderImg} alt="Ladder-img" />
             <div className="ladder-positions">
               {props.squareNumber + "-" + ladderPositions[props.squareNumber]}{" "}
             </div>
