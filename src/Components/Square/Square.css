@@ -1,0 +1,55 @@
+.snake-ladder-square {
+    display: grid;
+    grid-template: repeat(2, 40px)/repeat(3, 40px);
+    padding: 5px;
+    border: 1px solid red;
+}
+
+.square-number {
+    font-size: 2.5rem;
+}
+
+.ladder-img,
+.snake-img {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 5px 35px;
+    width: 50px;
+    height: 50px;
+}
+
+.home-img {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 5px 35px;
+    width: 50px;
+    height: 50px;
+}
+
+.ladder-positions,
+.snake-positions {
+    grid-column: 2/span 3;
+    grid-row: 2;
+    font-size: 1.2rem;
+    padding: 7px 15px;
+
+}
+
+.coin {
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.coin-1 {
+    grid-column: 1;
+    grid-row: 2;
+    background-color: blue;
+}
+
+.coin-2 {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: green;
+}
