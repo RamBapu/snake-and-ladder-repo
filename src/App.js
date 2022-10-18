@@ -13,23 +13,34 @@ function App() {
     setPositions(positionsData);
   };
 
+  const game = {
+    players : ['player1','player2'],
+    gameWinner : () => {
+      if(positions.playerOnePosition === 100)
+      return 'player1' 
+      else if(positions.playerTwoPosition === 100)
+      return 'player2'
+      else
+      return ''
+    }
+  }
+
   return (
     <>
       <div className="App">
-        {positions.playerOnePosition === 100 && (
+        {game.gameWinner() === 'player1' && (
           <>
             <div className="winner-pop-up">Player One is the Winner</div>
             <h2 className="reset-game">Reset to play again!!!</h2>
           </>
         )}
-        {positions.playerTwoPosition === 100 && (
+        {game.gameWinner() === 'player2' && (
           <>
             <div className="winner-pop-up">Player Two is the Winner</div>
             <h2 className="reset-game">Reset to play again!!!</h2>
           </>
         )}
-        {positions.playerOnePosition !== 100 &&
-          positions.playerTwoPosition !== 100 && (
+        {!game.gameWinner() && (
             <>
               <Board playerPositions={positions} />
             </>

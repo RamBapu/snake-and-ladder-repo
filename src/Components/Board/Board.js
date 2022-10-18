@@ -1,6 +1,6 @@
 import React from "react";
 import Square from "../Square/Square";
-import './Board.css'
+import "./Board.css";
 
 const Board = (props) => {
   const squareValues = [];
@@ -11,29 +11,32 @@ const Board = (props) => {
     squareArray.push(squareNum);
   }
 
-  for (let i = 0, j = 0; i < 100; i++) {
-    if (i % 10 === 0) {
+  for (let squareNum = 0, diffValue = 0; squareNum < 100; squareNum++) {
+    if (squareNum % 10 === 0) {
       rows += 1;
-      lastValueOfRow = squareArray[i];
-      j = 10;
+      lastValueOfRow = squareArray[squareNum];
+      diffValue = 10;
     }
     if (rows % 2 === 0) {
-      j--;
-      squareValues[i] = lastValueOfRow - j;
-    } else squareValues[i] = squareArray[i];
+      squareValues[squareNum] = lastValueOfRow + 1 - diffValue--;
+    } else squareValues[squareNum] = squareArray[squareNum];
   }
 
-  const playerOnePosition = props.playerPositions.playerOnePosition
-  const playerTwoPosition = props.playerPositions.playerTwoPosition
+  const playerOnePosition = props.playerPositions.playerOnePosition;
+  const playerTwoPosition = props.playerPositions.playerTwoPosition;
   return (
     <>
-    <div className="background-panel">
+      <div className="background-panel">
         <div className="snake-ladder-grid">
-        {squareValues.map((squareValue,key) => (
-            <Square key={squareValue} squareNumber={squareValue} playerPositions={{playerOnePosition,playerTwoPosition}} />
-        ))}
+          {squareValues.map((squareValue, key) => (
+            <Square
+              key={squareValue}
+              squareNumber={squareValue}
+              playerPositions={{ playerOnePosition, playerTwoPosition }}
+            />
+          ))}
         </div>
-    </div>
+      </div>
     </>
   );
 };

@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "./GamePad.css";
 import SnakeLadderImg from "../../Images/Snake-ladder-cover.jpg";
-import { snakePositions,ladderPositions } from "../../util/SnakeAndLadderPositions";
+import {
+  snakePositions,
+  ladderPositions,
+} from "../../Util/SnakeAndLadderPositions";
 
 const playerOneAllPositions = [];
 const playerTwoAllPositions = [];
 const GamePad = (props) => {
-  const [disablePlayerOne, setDisablePlayerOne] = useState(false);
-  const [disablePlayerTwo, setDisablePlayerTwo] = useState(false);
+  const [disable, setDisable] = useState({
+    playerOne: false,
+    playerTwo: false,
+  });
   const [playerOneRandomDiceCount, setPlayerOneRandomDiceCount] = useState(0);
   const [playerTwoRandomDiceCount, setPlayerTwoRandomDiceCount] = useState(0);
   const [playerOnePosition, setPlayerOnePosition] = useState(0);
@@ -50,8 +55,10 @@ const GamePad = (props) => {
   }, [playerOnePosition, playerTwoPosition]);
 
   const rollPlayerOne = () => {
-    setDisablePlayerOne(true);
-    setDisablePlayerTwo(false);
+    setDisable({
+      playerOne: true,
+      playerTwo: false,
+    });
     let maxValue = 6;
     let minValue = 0;
     let playerOneDice = Math.ceil(Math.random() * (maxValue - minValue));
@@ -59,8 +66,10 @@ const GamePad = (props) => {
   };
 
   const rollPlayerTwo = () => {
-    setDisablePlayerTwo(true);
-    setDisablePlayerOne(false);
+    setDisable({
+      playerTwo: true,
+      playerOne: false,
+    });
     let maxValue = 6;
     let minValue = 0;
     let playerTwoDice = Math.ceil(Math.random() * (maxValue - minValue));
@@ -79,8 +88,10 @@ const GamePad = (props) => {
     setPlayerTwoPosition(0);
     setPlayerOneRandomDiceCount(0);
     setPlayerTwoRandomDiceCount(0);
-    setDisablePlayerOne(false);
-    setDisablePlayerTwo(false);
+    setDisable({
+      playerTwo: false,
+      playerOne: false,
+    });
     buttonClickHandler();
   };
 
@@ -100,14 +111,14 @@ const GamePad = (props) => {
         <div className="btn">
           <button
             className="player1"
-            disabled={disablePlayerOne}
+            disabled={disable.playerOne}
             onClick={rollPlayerOne}
           >
             Player 1
           </button>
           <button
             className="player2"
-            disabled={disablePlayerTwo}
+            disabled={disable.playerTwo}
             onClick={rollPlayerTwo}
           >
             Player 2

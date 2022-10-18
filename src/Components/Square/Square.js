@@ -6,7 +6,7 @@ import HomeImg from "../../Images/Home.png";
 import {
   snakePositions,
   ladderPositions,
-} from "../../util/SnakeAndLadderPositions";
+} from "../../Util/SnakeAndLadderPositions";
 
 const Square = (props) => {
   return (
