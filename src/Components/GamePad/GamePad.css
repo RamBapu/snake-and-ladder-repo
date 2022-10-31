@@ -1,73 +1,87 @@
 .game-pad {
-    background-color: black;
-    background-image: none;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .game-title {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 500;
-    margin: 1.5rem;
-    letter-spacing: 0.125rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 1.5rem;
+  letter-spacing: 0.125rem;
+}
+
+.snake-ladder-img {
+  width: 15rem;
+  height: 15rem;
 }
 
 .dices {
-    display: flex;
-    flex-direction: row;
-
+  display: flex;
+  flex-direction: row;
 }
 
 .box-area {
-    margin: 20px;
-    font-size: 3rem;
-    width: 100px;
-    height: 100px;
-    border: 1px solid white;
-    border-radius: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin: 0.5rem;
+  font-size: 2rem;
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid white;
+  border-radius: 10%;
+  padding-top: 0.625rem;
+  resize: none;
+  text-align: center;
 }
 
-.btn {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 10%;
+  color: black;
+}
 
+
+.button:hover {
+  background-color: white;
+  color: red;
+}
+
+.button:disabled {
+  opacity: 0.25;
+}
+
+.player-button-grid {
+  display: grid;
+  grid-template: repeat(2, 1fr)/repeat(2, 1fr);
 }
 
 .player1 {
-    margin: 0.5rem;
-    font-size: 30px;
-    padding: 1rem;
-    border-radius: 10%;
-    background-color: blue;
+  background-color: red;
 }
 
 .player2 {
-    margin: 0.5rem;
-    font-size: 30px;
-    padding: 1rem;
-    border-radius: 10%;
-    background-color: green;
+  background-color: yellow;
 }
 
-.player1:hover,
-.player2:hover,
-.reset:hover {
-    background-color: red;
-    color: white;
+.player3 {
+  background-color: blue;
 }
 
+.player4 {
+  background-color: green;
+}
 
-.reset {
-    font-size: 30px;
-    padding: 1rem;
-    border-radius: 10%;
-    background-color: yellow;
-    color: black;
+.reset-btn {
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 10%;
+  background-color: yellow;
+  color: black;
+  text-decoration: none;
 }

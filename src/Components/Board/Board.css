@@ -1,9 +1,7 @@
 .snake-ladder-grid {
-    min-width: 150vh;
-    min-height: 100vh;
     display: grid;
-    grid-template: repeat(10, 1fr)/repeat(10, 1fr);
-    border: 1px solid;
+    grid-template: repeat(10,3.83rem)/repeat(10,5.725rem);
+    border: 1px solid black;
     background-color: black;
     color: white;
 }
